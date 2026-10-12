@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -31,10 +30,11 @@ const Register = () => {
 
 
     return (
-        <div>
-            <div className="d-flex justify-content-center align-items-center text-center vh-100" style= {{backgroundImage : "linear-gradient(#00d5ff,#0095ff,rgba(93,0,255,.555))"}}>
-                <div className="bg-white p-3 rounded" style={{width : '40%'}}>
-                    <h2 className='mb-3 text-primary'>Register</h2>
+        <main className="auth-page d-flex justify-content-center align-items-center text-center">
+                <section className="auth-card">
+                    <span className="auth-eyebrow">CREATE YOUR ACCOUNT</span>
+                    <h1 className="auth-title">Register</h1>
+                    <p className="auth-description">Get started by creating your account.</p>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3 text-start">
                             <label htmlFor="exampleInputEmail1" className="form-label">
@@ -75,14 +75,12 @@ const Register = () => {
                                 required
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary">Register</button>
+                        <button type="submit" className="btn auth-submit">Register</button>
                     </form>
 
-                    <p className='container my-2'>Already have an account ?</p>
-                    <Link to='/login' className="btn btn-secondary">Login</Link>
-                </div>
-            </div>
-        </div>
+                    <p className="auth-switch">Already have an account? <Link to="/login">Login</Link></p>
+                </section>
+        </main>
     )
 }
 

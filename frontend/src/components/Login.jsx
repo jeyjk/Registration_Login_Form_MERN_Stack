@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -29,10 +28,11 @@ const Login = () => {
 
 
     return (
-        <div>
-            <div className="d-flex justify-content-center align-items-center text-center vh-100" style= {{backgroundImage : "linear-gradient(#00d5ff,#0095ff,rgba(93,0,255,.555))"}}>
-                <div className="bg-white p-3 rounded" style={{width : '40%'}}>
-                    <h2 className='mb-3 text-primary'>Login</h2>
+        <main className="auth-page d-flex justify-content-center align-items-center text-center">
+                <section className="auth-card">
+                    <span className="auth-eyebrow">WELCOME BACK</span>
+                    <h1 className="auth-title">Login</h1>
+                    <p className="auth-description">Sign in to continue to your account.</p>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3 text-start">
                             <label htmlFor="exampleInputEmail1" className="form-label">
@@ -60,14 +60,11 @@ const Login = () => {
                                 required
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary">Login</button>
+                        <button type="submit" className="btn auth-submit">Login</button>
                     </form>
-                    {/* TO add ' appostopee */}
-                    <p className='container my-2'>Don&apos;t have an account?</p>
-                    <Link to='/register' className="btn btn-secondary">Register</Link>
-                </div>
-            </div>
-        </div>
+                    <p className="auth-switch">Don&apos;t have an account? <Link to="/register">Register</Link></p>
+                </section>
+        </main>
     )
 }
 
